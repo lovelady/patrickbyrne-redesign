@@ -1,0 +1,10 @@
+routes:
+  - path: /
+    file: app/routes/_index.tsx
+    title: "Official Patrick M. Byrne Website"
+  - path: /about
+    file: app/routes/about.tsx
+    title: "Bio – Official Patrick M. Byrne Website"
+  - path: /contact
+    file: app/routes/contact.tsx
+    title: "Contact – Official Patrick M. Byrne Website"

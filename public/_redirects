@@ -1,0 +1,3 @@
+# WordPress legacy redirects
+/bio    /about   301
+/bio/   /about   301

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /_data/
+Disallow: /build/
+
+Sitemap: https://patrickbyrne.com/sitemap.xml
