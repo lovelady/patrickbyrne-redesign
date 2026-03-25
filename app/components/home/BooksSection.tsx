@@ -10,6 +10,7 @@ const books = [
     description:
       "Full memoir covering FBI informant years, Maria Butina, the Russia investigation, and the 2020 election.",
     publisher: "Defiance Press",
+    amazonUrl: "https://www.amazon.com/Danger-Close-Domestic-Extremist-Comes/dp/196310210X/",
   },
   {
     title: "The Deep Rig",
@@ -19,6 +20,7 @@ const books = [
     description:
       "Byrne's firsthand account of the post-election efforts, compiled from his viral blog series.",
     publisher: "Self-published",
+    amazonUrl: "https://www.amazon.com/Deep-Rig-Election-Fraud-Donald/dp/B093DWY992/",
   },
 ];
 
@@ -93,6 +95,14 @@ export default function BooksSection() {
                 <p className="mt-4 text-base text-muted leading-relaxed">
                   {book.description}
                 </p>
+                <a
+                  href={book.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 text-xs font-body font-semibold uppercase tracking-[0.15em] text-accent hover:text-foreground transition-colors duration-300"
+                >
+                  View on Amazon &rarr;
+                </a>
               </div>
             </AnimatedCard>
           ))}
