@@ -2,16 +2,16 @@
 plan: redesign-patrickbyrne-com
 status: active
 priority: high
-current_time: 1
-confirmed_complete: false
+current_time: 5
+confirmed_complete: true
 project_id: project.default
 total_slots: 5
 time_slots:
-  1: { status: pending, date: null }
-  2: { status: pending, date: null }
-  3: { status: pending, date: null }
-  4: { status: pending, date: null }
-  5: { status: pending, date: null }
+  1: { status: completed, date: 2026-03-25 }
+  2: { status: completed, date: 2026-03-25 }
+  3: { status: completed, date: 2026-03-25 }
+  4: { status: completed, date: 2026-03-25 }
+  5: { status: completed, date: 2026-03-25 }
 prs: []
 pr_strategy: manual
 ---
@@ -81,11 +81,11 @@ Typography: Hero text-6xl lg:text-8xl. Section headings text-3xl lg:text-5xl. Bo
 | 5 | Create shared UI components: (a) `app/components/ui/Button.tsx` — primary (`bg-accent text-background`), secondary (`bg-surface text-foreground border-border`), outline variants. (b) `app/components/ui/Container.tsx` — max-width wrapper with responsive padding. (c) `app/components/ui/Section.tsx` — vertical section with configurable `bg-background` / `bg-surface` background and generous padding. All components MUST use Tailwind classes that reference the design token theme — no hardcoded colors. | `agent.eng.frontend` | `app/components/ui/Button.tsx`, `app/components/ui/Container.tsx`, `app/components/ui/Section.tsx` | `app/components/ui/` |
 
 **Exit Criteria:**
-- [ ] Project scaffolded with React Router v7 + Cloudflare
-- [ ] Design tokens applied (tokens.css + tailwind.config.ts)
-- [ ] Global layout renders with Header and Footer
-- [ ] Navigation matches source site structure
-- [ ] `pnpm dev` runs without errors
+- [x] Project scaffolded with React Router v7 + Cloudflare
+- [x] Design tokens applied (tokens.css + tailwind.config.ts)
+- [x] Global layout renders with Header and Footer
+- [x] Navigation matches source site structure
+- [x] `pnpm dev` runs without errors
 
 ---
 
@@ -100,9 +100,9 @@ Typography: Hero text-6xl lg:text-8xl. Section headings text-3xl lg:text-5xl. Bo
 | 3 | Integrate the curated copy into the scaffold. Update `app/routes/_index.tsx` hero section with the refined headline and subtext. Add the "Featured In" section below the hero. Add the pull quotes as a testimonials/press section. Use design tokens for all styling. The result should make a visitor think "this person is important" within 2 seconds of landing. | `agent.eng.frontend` | `app/routes/_index.tsx` | `app/routes/` |
 
 **Exit Criteria:**
-- [ ] Web research completed with 5-10 proof points
-- [ ] Curated copy written for homepage hero and press section
-- [ ] Homepage scaffold updated with curated content
+- [x] Web research completed with 5-10 proof points
+- [x] Curated copy written for homepage hero and press section
+- [x] Homepage scaffold updated with curated content
 
 ---
 
@@ -118,9 +118,9 @@ Typography: Hero text-6xl lg:text-8xl. Section headings text-3xl lg:text-5xl. Bo
 | 4 | Add SEO meta to "Official Patrick M. Byrne Website" route. In the `meta` export: title ("Official Patrick M. Byrne Website"), description (""), og:title, og:description, og:image (if hero image exists), canonical URL. Generate appropriate OG tags based on the page content. | `agent.eng.frontend` | `app/routes/_index.tsx` | `app/routes/` |
 
 **Exit Criteria:**
-- [ ] `app/routes/_index.tsx` renders with correct content
-- [ ] SEO meta tags set for all pages in this slot
-- [ ] Design tokens used consistently (no hardcoded colors)
+- [x] `app/routes/_index.tsx` renders with correct content
+- [x] SEO meta tags set for all pages in this slot
+- [x] Design tokens used consistently (no hardcoded colors)
 
 ---
 
@@ -140,10 +140,10 @@ Typography: Hero text-6xl lg:text-8xl. Section headings text-3xl lg:text-5xl. Bo
 | 8 | Add SEO meta to "Contact – Official Patrick M. Byrne Website" route. In the `meta` export: title ("Contact – Official Patrick M. Byrne Website"), description (""), og:title, og:description, og:image (if hero image exists), canonical URL. Generate appropriate OG tags based on the page content. | `agent.eng.frontend` | `app/routes/contact.tsx` | `app/routes/` |
 
 **Exit Criteria:**
-- [ ] `app/routes/about.tsx` renders with correct content
-- [ ] `app/routes/contact.tsx` renders with correct content
-- [ ] SEO meta tags set for all pages in this slot
-- [ ] Design tokens used consistently (no hardcoded colors)
+- [x] `app/routes/about.tsx` renders with correct content
+- [x] `app/routes/contact.tsx` renders with correct content
+- [x] SEO meta tags set for all pages in this slot
+- [x] Design tokens used consistently (no hardcoded colors)
 
 ---
 
@@ -160,11 +160,11 @@ Typography: Hero text-6xl lg:text-8xl. Section headings text-3xl lg:text-5xl. Bo
 | 5 | Final review: (a) Verify all pages render with correct content from the source site, (b) Check responsive design at 390px, 768px, 1440px viewports, (c) Verify navigation works on all pages, (d) Check that design tokens are consistently applied (no hardcoded colors/fonts), (e) Verify all images have alt text, (f) Run accessibility check on heading hierarchy. | `agent.eng.frontend` | Validation report | `app/` |
 
 **Exit Criteria:**
-- [ ] sitemap.xml and robots.txt generated
-- [ ] Canonical URLs set on all routes
-- [ ] All images have lazy loading (except hero)
-- [ ] Cloudflare deployment config complete
-- [ ] All routes render correctly with migrated content
+- [x] sitemap.xml and robots.txt generated
+- [x] Canonical URLs set on all routes
+- [x] All images have lazy loading (except hero)
+- [x] Cloudflare deployment config complete
+- [x] All routes render correctly with migrated content
 
 ---
 
