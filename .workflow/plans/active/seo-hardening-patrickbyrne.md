@@ -2,13 +2,13 @@
 plan: seo-hardening-patrickbyrne
 status: active
 priority: high
-current_time: 1
-confirmed_complete: false
+current_time: 2
+confirmed_complete: true
 project_id: project.default
 total_slots: 2
 time_slots:
-  1: { status: pending, date: null }
-  2: { status: pending, date: null }
+  1: { status: completed, date: 2026-03-25 }
+  2: { status: completed, date: 2026-03-25 }
 prs: []
 pr_strategy: manual
 ---
@@ -42,11 +42,11 @@ An SEO scan revealed missing canonical URLs, Twitter/X card tags, `og:url`, `og:
 | 3 | Confirm `public/favicon.ico` exists. If not, download or generate a minimal favicon (gold "P" on black background or similar brand-appropriate icon) and place it at `public/favicon.ico`. | `agent.eng.frontend` | `public/favicon.ico` | `public/` |
 
 **Exit Criteria:**
-- [ ] `app/lib/seo.ts` exists with `buildMeta()` helper returning complete meta arrays
-- [ ] `buildMeta()` produces canonical URL, OG tags (title, description, url, image, type, site_name), and Twitter card tags
-- [ ] `app/root.tsx` has favicon link and corrected font preload
-- [ ] `public/favicon.ico` exists
-- [ ] `pnpm build` passes
+- [x] `app/lib/seo.ts` exists with `buildMeta()` helper returning complete meta arrays
+- [x] `buildMeta()` produces canonical URL, OG tags (title, description, url, image, type, site_name), and Twitter card tags
+- [x] `app/root.tsx` has favicon link and corrected font preload
+- [x] `public/favicon.ico` exists
+- [x] `pnpm build` passes
 
 ---
 
@@ -63,11 +63,11 @@ An SEO scan revealed missing canonical URLs, Twitter/X card tags, `og:url`, `og:
 | 5 | Run `pnpm build` to verify all routes compile. Spot-check the built HTML output (if SSR/prerender) or review the meta arrays in source to confirm canonical, OG, and Twitter tags are present on every page. | `agent.eng.frontend` | Build passes, verification notes | `app/` |
 
 **Exit Criteria:**
-- [ ] All 4 routes use `buildMeta()` — no manual meta arrays remain
-- [ ] Every route has: title, meta description, canonical URL, og:title, og:description, og:url, og:image (absolute), og:type, og:site_name, twitter:card, twitter:title, twitter:description, twitter:image
-- [ ] Home page `og:image` uses absolute URL (not `/images/hero.webp`)
-- [ ] `pnpm build` passes with no errors
-- [ ] No hardcoded hex colors introduced
+- [x] All 4 routes use `buildMeta()` — no manual meta arrays remain
+- [x] Every route has: title, meta description, canonical URL, og:title, og:description, og:url, og:image (absolute), og:type, og:site_name, twitter:card, twitter:title, twitter:description, twitter:image
+- [x] Home page `og:image` uses absolute URL (not `/images/hero.webp`)
+- [x] `pnpm build` passes with no errors
+- [x] No hardcoded hex colors introduced
 
 ---
 
