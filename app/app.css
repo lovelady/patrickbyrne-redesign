@@ -2,29 +2,59 @@
 @import "./tokens.css";
 
 @theme {
-  /* Colors — from design tokens */
-  --color-primary: #0a0a0a;
-  --color-secondary: #1a1a1a;
-  --color-accent: #c8a86e;
-  --color-background: #000000;
-  --color-foreground: #f5f5f5;
-  --color-surface: #111111;
-  --color-muted: #a0a0a0;
-  --color-border: #222222;
+  /* Colors — institutional editorial palette */
+  --color-primary: #0f0f0e;
+  --color-secondary: #181715;
+  --color-accent: #b89a5e;
+  --color-background: #0c0b0a;
+  --color-foreground: #ede8df;
+  --color-surface: #141312;
+  --color-surface-elevated: #1c1b19;
+  --color-muted: #9a9389;
+  --color-border: #2a2725;
   --color-error: #ef4444;
   --color-success: #22c55e;
   --color-warning: #eab308;
 
-  /* Fonts — from design tokens */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  /* Fonts — editorial serif + neutral grotesk */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: Inter, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Border radius */
+  /* Border radius — restrained */
   --radius-sm: 0.125rem;
-  --radius: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-2xl: 1rem;
+  --radius: 0.1875rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.625rem;
+}
+
+/* Mobile menu animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.3s ease-out; }
+.animate-fade-in-up { animation: fade-in-up 0.4s ease-out; }
+
+/* Utility: warm hairline rule */
+.rule-warm {
+  border-color: var(--color-border);
+}
+
+/* Utility: subtle vignette overlay for depth */
+.vignette {
+  position: relative;
+}
+.vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 50%, var(--color-background) 100%);
 }

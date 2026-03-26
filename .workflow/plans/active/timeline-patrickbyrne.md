@@ -1,6 +1,6 @@
 ---
 plan: timeline-patrickbyrne
-status: active
+status: completed
 priority: medium
 current_time: 3
 confirmed_complete: true

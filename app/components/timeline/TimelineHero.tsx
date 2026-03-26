@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Container from "../ui/Container";
 
 export default function TimelineHero() {
   const ref = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ export default function TimelineHero() {
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add("opacity-100", "translate-y-0");
-          el.classList.remove("opacity-0", "translate-y-8");
+          el.classList.remove("opacity-0", "translate-y-6");
           observer.disconnect();
         }
       },
@@ -21,23 +22,25 @@ export default function TimelineHero() {
   }, []);
 
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-surface/30" />
-      <div
-        ref={ref}
-        className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center py-32 opacity-0 translate-y-8 transition-all duration-[800ms] ease-out"
-      >
-        <p className="text-xs font-body font-semibold uppercase tracking-[0.3em] text-accent mb-6">
-          A Life in Full
-        </p>
-        <h1 className="text-5xl md:text-6xl lg:text-8xl font-heading font-bold text-foreground leading-[0.95] tracking-tight">
-          The Life of Patrick M. Byrne
-        </h1>
-        <p className="mt-8 text-lg lg:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed font-body">
-          From Fort Wayne to Dubai. Builder, philosopher, disruptor.
-        </p>
-        <div className="mt-10 w-24 h-px bg-accent mx-auto" />
-      </div>
+    <section className="pt-36 pb-20 lg:pt-44 lg:pb-28 bg-background">
+      <Container>
+        <div
+          ref={ref}
+          className="opacity-0 translate-y-6 transition-all duration-[800ms] ease-out max-w-4xl"
+        >
+          <p className="text-[0.6875rem] font-body font-medium uppercase tracking-[0.3em] text-accent mb-8">
+            A Life in Full
+          </p>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-semibold text-foreground leading-[0.92] tracking-tight">
+            Timeline
+          </h1>
+          <p className="mt-8 text-xl text-muted leading-relaxed font-body max-w-2xl">
+            From Fort Wayne to Dubai — the key moments that shaped a life in
+            business, technology, scholarship, and public advocacy.
+          </p>
+          <div className="mt-6 w-16 h-px bg-accent/30" />
+        </div>
+      </Container>
     </section>
   );
 }

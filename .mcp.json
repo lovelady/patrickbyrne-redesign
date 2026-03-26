@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "workflow": {
+      "command": "node",
+      "args": ["/Users/michaellovelady/Projects/workflow-system/apps/daemon/mcp-stdio-bridge.js"],
+      "env": {
+        "DAEMON_URL": "http://localhost:18331"
+      }
+    },
+    "rag": {
+      "command": "node",
+      "args": ["/Users/michaellovelady/Projects/workflow-system/apps/rag-server/dist/cli.js", "serve"],
+      "env": {
+        "WORKFLOW_ROOT": "/Users/michaellovelady/Projects/patrickbyrne-redesign",
+        "EMBEDDING_PROVIDER": "auto"
+      }
+    },
+    "scanners": {
+      "command": "node",
+      "args": ["/Users/michaellovelady/Projects/workflow-system/apps/scanners-server/server.js"],
+      "env": {
+        "WORKFLOW_ROOT": "/Users/michaellovelady/Projects/workflow-system",
+        "WORKFLOW_CONSUMER_ROOT": "/Users/michaellovelady/Projects/patrickbyrne-redesign"
+      }
+    },
+    "cloud-rag": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://rag.sfmetrics.com/mcp"],
+      "env": {}
+    },
+    "chrome-devtools-mcp": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp"]
+    },
+    "mcp-server-github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"]
+    }
+  }
+}

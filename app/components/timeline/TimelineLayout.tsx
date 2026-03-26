@@ -5,32 +5,35 @@ import TimelineEvent from "./TimelineEvent";
 
 export default function TimelineLayout({ events }: { events: TEvent[] }) {
   return (
-    <section className="relative bg-background py-12 lg:py-20">
-      <div className="relative max-w-5xl mx-auto px-6 lg:px-8">
-        {/* Center spine line — desktop */}
-        <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
-        {/* Left spine line — mobile */}
-        <div className="lg:hidden absolute left-[17px] top-0 bottom-0 w-px bg-border" />
-
+    <section className="relative bg-background pt-4 pb-16 lg:pt-8 lg:pb-24 border-t border-border/15">
+      <div className="relative max-w-4xl mx-auto px-6 lg:px-10">
         {eras.map((era) => {
           const eraEvents = getEventsByEra(era.key);
           if (eraEvents.length === 0) return null;
 
           return (
-            <div key={era.key}>
+            <div key={era.key} className="mb-8 lg:mb-12">
               <EraHeader label={era.label} range={era.range} />
-              {eraEvents.map((event, i) => (
-                <TimelineEvent
-                  key={`${event.year}-${event.headline}`}
-                  year={event.year}
-                  date={event.date}
-                  headline={event.headline}
-                  body={event.body}
-                  tags={event.tags}
-                  index={i}
-                  side={i % 2 === 0 ? "left" : "right"}
-                />
-              ))}
+
+              <div className="relative">
+                {/* Vertical spine — left rail */}
+                <div className="absolute left-[3px] lg:left-[59px] top-0 bottom-0 w-px bg-border/30" />
+
+                {eraEvents.map((event, i) => (
+                  <TimelineEvent
+                    key={`${event.year}-${event.headline}`}
+                    year={event.year}
+                    date={event.date}
+                    headline={event.headline}
+                    body={event.body}
+                    tags={event.tags}
+                    source={event.source}
+                    index={i}
+                    isFirst={i === 0}
+                    isLast={i === eraEvents.length - 1}
+                  />
+                ))}
+              </div>
             </div>
           );
         })}

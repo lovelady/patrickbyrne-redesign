@@ -1,6 +1,6 @@
 ---
 plan: redesign-patrickbyrne-com
-status: active
+status: completed
 priority: high
 current_time: 5
 confirmed_complete: true

@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import Container from "../ui/Container";
-import Section from "../ui/Section";
 
 const highlights = [
   {
@@ -68,19 +67,25 @@ function AnimatedItem({
 
 export default function HighlightsSection() {
   return (
-    <Section>
+    <section className="py-24 lg:py-32 bg-surface border-y border-border/20">
       <Container>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0">
           {highlights.map((item, i) => (
-            <AnimatedItem key={item.label} delay={i * 100}>
-              <div className="text-center lg:text-left">
-                <span className="block text-4xl lg:text-5xl font-heading font-bold text-accent leading-none">
+            <AnimatedItem key={item.label} delay={i * 120}>
+              <div
+                className={`text-left px-8 py-6 lg:py-0 ${
+                  i < highlights.length - 1
+                    ? "lg:border-r lg:border-border/25"
+                    : ""
+                } ${i < 2 ? "sm:border-b sm:border-border/20 lg:border-b-0" : ""}`}
+              >
+                <span className="block text-5xl lg:text-6xl font-heading font-semibold text-foreground leading-none tracking-tight">
                   {item.stat}
                 </span>
-                <span className="block mt-2 text-xs font-body font-semibold uppercase tracking-[0.2em] text-foreground">
+                <span className="block mt-4 text-[0.6875rem] font-body font-medium uppercase tracking-[0.2em] text-accent">
                   {item.label}
                 </span>
-                <p className="mt-3 text-sm text-muted leading-relaxed">
+                <p className="mt-3 text-sm text-muted leading-relaxed max-w-[22ch] lg:max-w-none">
                   {item.description}
                 </p>
               </div>
@@ -88,6 +93,6 @@ export default function HighlightsSection() {
           ))}
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

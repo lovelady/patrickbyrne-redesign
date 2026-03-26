@@ -5,6 +5,11 @@ export type EraKey =
   | "deepstate"
   | "author";
 
+export interface TimelineSource {
+  label: string;
+  url: string;
+}
+
 export interface TimelineEvent {
   year: string;
   date: string;
@@ -12,6 +17,7 @@ export interface TimelineEvent {
   headline: string;
   body: string;
   tags?: string[];
+  source?: TimelineSource | TimelineSource[];
 }
 
 export interface Era {
@@ -25,7 +31,7 @@ export const eras: Era[] = [
   { key: "overstock", label: "Building Overstock", range: "1999–2013" },
   { key: "tech", label: "Tech Pioneer", range: "2014–2018" },
   { key: "deepstate", label: "Deep State & Election Integrity", range: "2019–2022" },
-  { key: "author", label: "Author & Exile", range: "2021–Present" },
+  { key: "author", label: "Author & Advocate", range: "2021–Present" },
 ];
 
 export const events: TimelineEvent[] = [
@@ -36,6 +42,7 @@ export const events: TimelineEvent[] = [
     headline: "Born in Fort Wayne, Indiana",
     body: "Son of John J. \"Jack\" Byrne, who would become CEO of GEICO and chairman of White Mountains Insurance Group. Grew up in Woodstock, VT and Hanover, NH.",
     tags: ["origins"],
+    source: { label: "Time", url: "https://time.com/6197604/patrick-byrne-overstock-jan-6-hearings/" },
   },
   {
     year: "1975",
@@ -44,6 +51,7 @@ export const events: TimelineEvent[] = [
     headline: "First Meets Warren Buffett",
     body: "Through his father's insurance career, young Patrick meets Buffett. His parents allowed him to skip school to absorb lessons on business and investing. Byrne later calls Buffett his \"Rabbi\" and lifelong mentor.",
     tags: ["mentorship"],
+    source: { label: "Fox Business", url: "https://www.foxbusiness.com/business-leaders/bryne-oracle-of-omaha-is-his-rabbi" },
   },
   {
     year: "1984",
@@ -52,6 +60,7 @@ export const events: TimelineEvent[] = [
     headline: "Contracts Hepatitis C in China",
     body: "While in Xinjiang, China, a barefoot doctor sews up a head wound under unsanitary conditions, resulting in Hepatitis C infection — a condition that would shadow him for decades.",
     tags: ["health"],
+    source: { label: "CNN", url: "https://money.cnn.com/2016/04/11/technology/overstock-ceo-patrick-byrne" },
   },
   {
     year: "1985",
@@ -60,6 +69,7 @@ export const events: TimelineEvent[] = [
     headline: "Graduates from Dartmouth College",
     body: "Earns BA with dual majors in Western Philosophy and Asian Studies. Also studied at Beijing Normal University, earning a certificate.",
     tags: ["education"],
+    source: { label: "Irish America", url: "https://www.irishamerica.com/honoree/patrick-byrne/" },
   },
   {
     year: "1985",
@@ -68,6 +78,7 @@ export const events: TimelineEvent[] = [
     headline: "Diagnosed with Testicular Cancer",
     body: "Collapses during a vacation in Scotland weeks after graduation. Diagnosed with seminoma that had metastasized to his lungs. Hospitalized nearly three years total, then three more years of convalescence.",
     tags: ["health", "resilience"],
+    source: { label: "CancerConnect", url: "https://news.cancerconnect.com/testicular-cancer/patrick-byrne-testicular-cancer-survivor-J4olVy3vgUyZtt01hYx9uA/" },
   },
   {
     year: "1986",
@@ -76,6 +87,7 @@ export const events: TimelineEvent[] = [
     headline: "Studies in China",
     body: "Studies at Beijing Normal University. Spends extended time in China and Thailand — deepening exposure to Eastern philosophy and languages.",
     tags: ["education"],
+    source: { label: "Independent Institute", url: "http://www.independent.org/aboutus/person_detail.asp?id=3867" },
   },
   {
     year: "1987",
@@ -84,6 +96,7 @@ export const events: TimelineEvent[] = [
     headline: "Marshall Scholar at Cambridge",
     body: "Studies philosophy at King's College, Cambridge University on a Marshall Scholarship. Earns Master of Arts degree.",
     tags: ["education", "philosophy"],
+    source: { label: "Marshall Scholarships", url: "https://marshallscholarship.org/alumni/PatrickByrne" },
   },
   {
     year: "1989",
@@ -92,6 +105,7 @@ export const events: TimelineEvent[] = [
     headline: "Teaching Fellow at Stanford",
     body: "Serves as teaching fellow at Stanford University while simultaneously managing two private companies: Blackhawk Investment Co. and Elissar, Inc.",
     tags: ["education", "business"],
+    source: { label: "Sramana Mitra", url: "https://www.sramanamitra.com/2009/12/23/how-a-warren-buffet-protege-built-overstock-com-ceo-patrick-byrne-part-1/" },
   },
   {
     year: "1994",
@@ -100,6 +114,7 @@ export const events: TimelineEvent[] = [
     headline: "CEO of Centricut, LLC",
     body: "Runs industrial plasma torch manufacturer in Concord, NH. Steps in after the prior CEO's abrupt departure.",
     tags: ["business"],
+    source: { label: "Sramana Mitra", url: "https://www.sramanamitra.com/2009/12/23/how-a-warren-buffet-protege-built-overstock-com-ceo-patrick-byrne-part-1/" },
   },
   {
     year: "1996",
@@ -108,6 +123,7 @@ export const events: TimelineEvent[] = [
     headline: "Earns PhD in Philosophy from Stanford",
     body: "Dissertation covers intellectual origins of the U.S. Constitution, with emphasis on mathematical logic, moral philosophy, and economics.",
     tags: ["education", "philosophy"],
+    source: { label: "DuJour", url: "https://dujour.com/uncategorized/patrick-byrne-and-the-making-of-an-unconventional-american-entrepreneur/" },
   },
   {
     year: "1997",
@@ -116,6 +132,7 @@ export const events: TimelineEvent[] = [
     headline: "CEO of Fechheimer Brothers (Berkshire Hathaway)",
     body: "Runs uniform manufacturer for police, fire, and military. Recruited directly by Warren Buffett to lead the Berkshire subsidiary.",
     tags: ["business", "mentorship"],
+    source: { label: "InvestorPlace", url: "https://investorplace.com/2019/08/history-of-overstock-patrick-byrne/" },
   },
   {
     year: "1999",
@@ -124,6 +141,7 @@ export const events: TimelineEvent[] = [
     headline: "Invests in D2: Discounts Direct",
     body: "Puts $7 million for a 60% equity stake in a struggling online liquidation startup.",
     tags: ["overstock", "investment"],
+    source: { label: "Nasdaq", url: "https://www.nasdaq.com/articles/7-things-to-know-about-the-history-of-overstock-and-patrick-byrne-2019-08-28" },
   },
   {
     year: "1999",
@@ -132,6 +150,7 @@ export const events: TimelineEvent[] = [
     headline: "Takes Over as CEO of D2",
     body: "Assumes day-to-day leadership of the company, beginning a 20-year run as chief executive.",
     tags: ["overstock"],
+    source: { label: "Fast Company", url: "https://www.fastcompany.com/90769578/patrick-byrne-overstock-ceo-jan-6-hearings" },
   },
   {
     year: "1999",
@@ -140,6 +159,7 @@ export const events: TimelineEvent[] = [
     headline: "Company Renamed Overstock.com",
     body: "Rebrands from D2: Discounts Direct to Overstock.com, positioning it as an online closeout retailer.",
     tags: ["overstock"],
+    source: { label: "Ref for Business", url: "https://www.referenceforbusiness.com/history2/75/Overstock-com-Inc.html" },
   },
   {
     year: "2000",
@@ -148,6 +168,7 @@ export const events: TimelineEvent[] = [
     headline: "Bicycles Cross-Country for Cancer Research",
     body: "Rides from San Francisco to the East Coast to raise funds and awareness for the Dana-Farber Cancer Institute. Offers $1 million of his own money if donors match $11 million.",
     tags: ["philanthropy", "health"],
+    source: { label: "Steamboat Pilot", url: "https://www.steamboatpilot.com/news/cancer-beater-ceo-pedals-through-town-for-support/" },
   },
   {
     year: "2002",
@@ -156,6 +177,7 @@ export const events: TimelineEvent[] = [
     headline: "Overstock.com IPO",
     body: "First major U.S. company to use the Dutch auction method for its IPO. Sells 3 million shares at $13/share, raising approximately $39 million.",
     tags: ["overstock", "milestone"],
+    source: { label: "SEC Filing", url: "https://www.sec.gov/Archives/edgar/data/1130713/000091205702008668/a2072400zs-1.htm" },
   },
   {
     year: "2005",
@@ -164,6 +186,7 @@ export const events: TimelineEvent[] = [
     headline: "Launches Anti-Naked-Short-Selling Crusade",
     body: "Files suit against hedge fund Rocker Partners alleging illegal naked short selling of Overstock stock. Hosts \"The Miscreants' Ball\" webcast, referencing a mysterious \"Sith Lord\" (later identified as Steve Cohen).",
     tags: ["wall street", "activism"],
+    source: { label: "Rolling Stone", url: "https://www.rollingstone.com/politics/politics-news/accidentally-released-and-incredibly-embarrassing-documents-show-how-goldman-et-al-engaged-in-naked-short-selling-244035/" },
   },
   {
     year: "2005",
@@ -172,6 +195,7 @@ export const events: TimelineEvent[] = [
     headline: "Founds Deep Capture",
     body: "Launches deepcapture.com, a personally funded investigative media outlet created to bypass what Byrne calls \"captured\" institutions mediating national discourse on Wall Street corruption.",
     tags: ["media", "activism"],
+    source: { label: "Deep Capture", url: "https://www.deepcapture.com/about-deep-capture/" },
   },
   {
     year: "2006",
@@ -180,6 +204,7 @@ export const events: TimelineEvent[] = [
     headline: "Named Chairman of Friedman Foundation",
     body: "Becomes chairman of the Milton & Rose Friedman Foundation for Educational Choice (now EdChoice) following Milton Friedman's death.",
     tags: ["philanthropy", "education"],
+    source: { label: "EdChoice", url: "https://www.edchoice.org/edchoice-announces-board-leadership-changes-new-board-member/" },
   },
   {
     year: "2007",
@@ -188,6 +213,7 @@ export const events: TimelineEvent[] = [
     headline: "Files $3.5 Billion Lawsuit Against Wall Street",
     body: "Overstock and Byrne sue 11 prime brokerages including Goldman Sachs and Merrill Lynch, alleging deliberate market manipulation through phantom share sales.",
     tags: ["wall street", "legal"],
+    source: { label: "Bloomberg", url: "https://www.bloomberg.com/news/articles/2007-02-03/overstockcom-sues-brokers-for-stock-manipulation-update2" },
   },
   {
     year: "2007",
@@ -196,6 +222,7 @@ export const events: TimelineEvent[] = [
     headline: "Major School Voucher Campaign",
     body: "Funds over $4 million of $5 million raised by Families for Choice PAC supporting Utah's school voucher referendum.",
     tags: ["philanthropy", "education"],
+    source: { label: "Education Week", url: "https://www.edweek.org/policy-politics/utah-vouchers-rejected-in-overwhelming-vote/2007/11" },
   },
   {
     year: "2010",
@@ -204,6 +231,7 @@ export const events: TimelineEvent[] = [
     headline: "Builds Schools Across Developing World",
     body: "Founds 22 private schools in Africa, India, Asia, and Latin America — named for his mother Dorothy Byrne. Collectively educate over 7,000 students.",
     tags: ["philanthropy", "education"],
+    source: { label: "Philanthropy Roundtable", url: "https://www.philanthropyroundtable.org/magazine/interview-with-patrick-byrne/" },
   },
   {
     year: "2011",
@@ -212,6 +240,7 @@ export const events: TimelineEvent[] = [
     headline: "Ernst & Young Entrepreneur of the Year",
     body: "Named National Entrepreneur of the Year 2011 (Retail & Consumer Products) at the Strategic Growth Forum in Palm Springs, CA.",
     tags: ["award", "milestone"],
+    source: { label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/overstockcom-ceo-dr-patrick-m-byrne-named-ernst--young-national-entrepreneur-of-the-year-2011-retail-and-consumer-products-award-winner-133955538.html" },
   },
   {
     year: "2014",
@@ -220,6 +249,7 @@ export const events: TimelineEvent[] = [
     headline: "First Major Retailer to Accept Bitcoin",
     body: "Overstock becomes first major U.S. retailer (then $1.4B in annual revenue) to accept Bitcoin. Receives over 800 orders worth $126,000 on day one.",
     tags: ["blockchain", "bitcoin", "milestone"],
+    source: { label: "Wired", url: "https://www.wired.com/2014/01/overstock-bitcoin-live/" },
   },
   {
     year: "2014",
@@ -228,6 +258,7 @@ export const events: TimelineEvent[] = [
     headline: "Founds Medici Ventures",
     body: "Creates wholly owned Overstock subsidiary focused on leveraging blockchain technology for securities trading, property rights, and financial infrastructure.",
     tags: ["blockchain", "investment"],
+    source: { label: "Crunchbase", url: "https://www.crunchbase.com/organization/medici-ventures" },
   },
   {
     year: "2015",
@@ -236,6 +267,7 @@ export const events: TimelineEvent[] = [
     headline: "First Digital Bond on Bitcoin Blockchain",
     body: "Uses Medici's tZERO platform to execute the world's first purchase of a digital bond entirely on the Bitcoin blockchain.",
     tags: ["blockchain", "milestone"],
+    source: { label: "CoinDesk", url: "https://www.coindesk.com/markets/2015/06/06/overstock-to-issue-digital-corporate-bond-on-bitcoin-blockchain" },
   },
   {
     year: "2015",
@@ -244,6 +276,7 @@ export const events: TimelineEvent[] = [
     headline: "Meets Maria Butina",
     body: "Encounters Butina at a libertarian conference. Contacts the FBI, beginning a years-long role as a government informant.",
     tags: ["fbi", "intelligence"],
+    source: { label: "Rolling Stone", url: "https://www.rollingstone.com/politics/politics-features/maria-butina-russia-spy-fbi-860256/" },
   },
   {
     year: "2016",
@@ -252,6 +285,7 @@ export const events: TimelineEvent[] = [
     headline: "Settles Naked Short Selling Litigation",
     body: "Merrill Lynch settles for $20 million. Multiple other defendants also settle, ending the decade-long legal battle. SEC bans naked shorting in the process.",
     tags: ["wall street", "legal", "milestone"],
+    source: { label: "GlobeNewsWire", url: "https://www.globenewswire.com/news-release/2016/01/28/805775/0/en/Overstock-com-Accepts-20-Million-to-Settle-Market-Manipulation-Case.html" },
   },
   {
     year: "2016",
@@ -260,6 +294,7 @@ export const events: TimelineEvent[] = [
     headline: "Takes Leave for Hepatitis C Treatment",
     body: "Announces indefinite leave from Overstock to address complications from the Hepatitis C he contracted in China in 1984. Completes treatment and returns.",
     tags: ["health"],
+    source: { label: "CNN", url: "https://money.cnn.com/2016/04/11/technology/overstock-ceo-patrick-byrne" },
   },
   {
     year: "2016",
@@ -268,6 +303,7 @@ export const events: TimelineEvent[] = [
     headline: "First Blockchain-Based Public Stock Offering",
     body: "tZERO executes the world's first SEC-compliant, FINRA-approved alternative trading system (ATS) blockchain security — a milestone in financial technology history.",
     tags: ["blockchain", "milestone"],
+    source: { label: "CoinDesk", url: "https://www.coindesk.com/markets/2016/12/15/overstock-raises-109-million-in-first-blockchain-stock-issuance" },
   },
   {
     year: "2017",
@@ -276,6 +312,7 @@ export const events: TimelineEvent[] = [
     headline: "Announces $250M tZERO ICO",
     body: "At Money 20/20 conference, announces a dramatic pivot from retail toward blockchain with a $250 million initial coin offering for tZERO.",
     tags: ["blockchain", "investment"],
+    source: { label: "GlobeNewsWire", url: "https://www.globenewswire.com/news-release/2017/10/24/1152717/0/en/Patrick-Byrne-Announces-Key-Details-on-tZERO-s-ICO-at-Money-20-20.html" },
   },
   {
     year: "2019",
@@ -284,6 +321,7 @@ export const events: TimelineEvent[] = [
     headline: "Goes Public About FBI Informant Role",
     body: "Reveals to media that the FBI directed him to pursue a romantic relationship with Maria Butina and re-establish contact ahead of the 2016 election.",
     tags: ["fbi", "intelligence"],
+    source: { label: "CNN", url: "https://www.cnn.com/2019/08/23/politics/patrick-byrne-maria-butina-fbi-relationship-cnntv" },
   },
   {
     year: "2019",
@@ -292,6 +330,7 @@ export const events: TimelineEvent[] = [
     headline: "Resigns as CEO of Overstock",
     body: "Steps down as CEO and from the Overstock board, citing \"deep state\" machinations. Jonathan E. Johnson III appointed as successor.",
     tags: ["overstock", "milestone"],
+    source: { label: "CNN", url: "https://www.cnn.com/2019/08/22/business/overstock-ceo-patrick-byrne-resigns" },
   },
   {
     year: "2019",
@@ -300,6 +339,7 @@ export const events: TimelineEvent[] = [
     headline: "Divests Overstock Equity",
     body: "Sells nearly all remaining equity stake in the company he founded, completing his separation from Overstock after 20 years.",
     tags: ["overstock"],
+    source: { label: "Washington Post", url: "https://www.washingtonpost.com/business/2019/09/19/overstocks-former-ceo-sells-off-his-m-stake-saying-hes-worried-about-deep-state/" },
   },
   {
     year: "2020",
@@ -308,6 +348,7 @@ export const events: TimelineEvent[] = [
     headline: "Enters 2020 Election Fray",
     body: "Studies evidence of alleged election fraud. Approaches attorney Sidney Powell. Begins financing and organizing efforts to challenge the results.",
     tags: ["election integrity"],
+    source: { label: "CNBC", url: "https://www.cnbc.com/2021/12/20/trump-allies-help-overstock-founder-patrick-byrne-push-false-election-claims.html" },
   },
   {
     year: "2020",
@@ -316,6 +357,7 @@ export const events: TimelineEvent[] = [
     headline: "Attends Unannounced Oval Office Meeting",
     body: "Meets with President Trump, Sidney Powell, and Gen. Michael Flynn. Argues the election was stolen; urges Trump to seize voting machines via executive order.",
     tags: ["election integrity"],
+    source: { label: "CNN", url: "https://www.cnn.com/2022/07/12/politics/trump-oval-office-meeting-december-2020/index.html" },
   },
   {
     year: "2021",
@@ -324,6 +366,7 @@ export const events: TimelineEvent[] = [
     headline: "Publishes \"How Trump Lost the White House\" Blog Series",
     body: "Multi-part firsthand account of the post-election efforts, detailing meetings at the White House and interactions with Trump's inner circle.",
     tags: ["writing"],
+    source: { label: "Deep Capture", url: "https://www.deepcapture.com/2021/02/how-djt-lost-the-white-house-chapter-3-crashing-the-white-house-december-18/" },
   },
   {
     year: "2021",
@@ -332,6 +375,7 @@ export const events: TimelineEvent[] = [
     headline: "Co-founds The America Project",
     body: "Launches nonprofit with Gen. Michael Flynn and Joe Flynn, focused on election integrity and constitutional rights. Byrne personally funds roughly $27 million of approximately $30 million in total expenditures through 2023.",
     tags: ["election integrity", "philanthropy"],
+    source: { label: "Issue One", url: "https://issueone.org/articles/patrick-byrne-michael-flynn-america-project-tax-filing/" },
   },
   {
     year: "2021",
@@ -340,6 +384,7 @@ export const events: TimelineEvent[] = [
     headline: "Publishes \"The Deep Rig\"",
     body: "Self-publishes The Deep Rig: How Election Fraud Cost Donald J. Trump the White House, By a Man Who Did Not Vote for Him.",
     tags: ["writing", "book"],
+    source: { label: "Amazon", url: "https://www.amazon.com/Deep-Rig-Election-friends-integrity/dp/0578865939" },
   },
   {
     year: "2021",
@@ -348,6 +393,7 @@ export const events: TimelineEvent[] = [
     headline: "Premieres \"The Deep Rig\" Documentary",
     body: "Film directed by Roger R. Richards debuts at Dream City Church, Phoenix, during the Arizona Senate audit of Maricopa County.",
     tags: ["film"],
+    source: { label: "AZ Mirror", url: "https://azmirror.com/2021/06/30/election-conspiracy-film-stars-promoted-vigilante-action-against-officials/" },
   },
   {
     year: "2022",
@@ -356,6 +402,7 @@ export const events: TimelineEvent[] = [
     headline: "Launches Election Integrity Initiative at CPAC",
     body: "Alongside Gen. Flynn and Roger Stone, unveils bi-partisan election monitoring program. The America Project organizes \"Operation Eagles Wings\" across eight states.",
     tags: ["election integrity"],
+    source: { label: "PR Newswire", url: "https://www.prnewswire.com/news-releases/general-flynn-patrick-byrne-roger-stone-joe-flynn-will-unveil-bi-partisan-election-integrity-initiative-at-cpac-301488663.html" },
   },
   {
     year: "2022",
@@ -364,14 +411,7 @@ export const events: TimelineEvent[] = [
     headline: "Testifies Before Jan. 6 House Select Committee",
     body: "Nearly 8-hour closed-door session. Transcript released December 30, 2022.",
     tags: ["legal", "testimony"],
-  },
-  {
-    year: "2023",
-    date: "Nov 2023",
-    era: "author",
-    headline: "Hunter Biden Files Defamation Lawsuit",
-    body: "Biden sues Byrne in U.S. District Court for the Central District of California over allegations Byrne made regarding a purported Biden-Iran bribery scheme.",
-    tags: ["legal"],
+    source: { label: "GovInfo", url: "https://www.govinfo.gov/app/details/GPO-J6-TRANSCRIPT-CTRL0000915977" },
   },
   {
     year: "2024",
@@ -380,6 +420,10 @@ export const events: TimelineEvent[] = [
     headline: "Publishes \"Danger Close\"",
     body: "Danger Close: Domestic Extremist #1 Comes Clean released by Defiance Press. Full memoir covering FBI informant years, Maria Butina, Russia investigation, and 2020 election. Preface by Butina; prologue by Gen. Flynn.",
     tags: ["writing", "book"],
+    source: [
+      { label: "Amazon", url: "https://www.amazon.com/Danger-Close-Domestic-Extremist-Comes/dp/196310210X" },
+      { label: "Defiance Press", url: "https://defiancepress.com/product/danger-close/" },
+    ],
   },
   {
     year: "2024",
@@ -388,14 +432,62 @@ export const events: TimelineEvent[] = [
     headline: "Relocates to Dubai",
     body: "Moves to the UAE citing a $25 million bounty allegedly placed by the Venezuelan government. Also claims threats from criminals in West Africa.",
     tags: ["exile"],
+    source: [
+      { label: "Newsweek", url: "https://www.newsweek.com/patrick-byrne-trump-ally-flees-us-venezuela-1966745" },
+      { label: "Law & Crime", url: "https://lawandcrime.com/high-profile/hunter-biden-attempt-to-put-ex-overstock-ceo-under-oath-in-defamation-suit-frustrated-by-sudden-move-to-dubai-and-claims-of-venezuelan-bounty/" },
+    ],
   },
   {
     year: "2025",
-    date: "Oct 2025",
+    date: "Dec 9, 2025",
     era: "author",
-    headline: "Found in Default in Hunter Biden Case",
-    body: "California judge finds Byrne in default for failing to defend himself. Byrne's attorneys move to set aside the default, calling him a \"whistleblower\" with \"tapes\" that can prove his claims.",
-    tags: ["legal"],
+    headline: "Reveals Years as CIA Intelligence Asset",
+    body: "In a widely covered interview, Byrne publicly discloses for the first time that he operated as a CIA intelligence asset from 2006 to 2016, carrying out politically sensitive missions under senior agency leadership.",
+    tags: ["intelligence", "media"],
+    source: [
+      { label: "LindellTV Interview", url: "https://x.com/RealLindellTV/status/1998471965670068390" },
+      { label: "Conservative Treehouse", url: "https://theconservativetreehouse.com/blog/2025/12/09/patrick-byrne-now-claims-he-was-is-a-cia-asset-worked-for-john-brennan/" },
+      { label: "Infowars", url: "https://www.infowars.com/posts/full-must-watch-interview-us-intelligence-asset-patrick-byrne-reveals-the-secret-of-why-trump-is-hellbent-on-regime-change-in-venezuela" },
+    ],
+  },
+  {
+    year: "2025",
+    date: "Dec 2, 2025",
+    era: "author",
+    headline: "Trump Amplifies Byrne on Truth Social",
+    body: "President Trump shares a video featuring Byrne during a major Truth Social posting session, signaling alignment with Byrne's claims about deep-state operations and Venezuelan interference.",
+    tags: ["politics", "media"],
+    source: [
+      { label: "Truth Social", url: "https://truthsocial.com/@realDonaldTrump" },
+      { label: "CNN", url: "https://www.cnn.com/2025/12/04/politics/truth-social-trump-fact-check" },
+      { label: "WLT Report", url: "https://wltreport.com/2025/12/03/president-trump-just-confirmed-patrick-byrnes-story-about/" },
+      { label: "Mediaite", url: "https://www.mediaite.com/online/trump-fires-off-over-160-truth-social-posts-in-frenetic-late-night-blitz/" },
+    ],
+  },
+  {
+    year: "2026",
+    date: "Jan 3, 2026",
+    era: "author",
+    headline: "U.S. Captures Maduro — Byrne Cited as Key Influence",
+    body: "Operation Absolute Resolve results in the capture of Venezuelan President Nicolás Maduro. Byrne is identified alongside retired CIA officer Gary Berntsen and consultant Martin Rodil as one of three figures whose research into Venezuelan election interference informed the administration's case.",
+    tags: ["intelligence", "geopolitics"],
+    source: [
+      { label: "CNN", url: "https://edition.cnn.com/world/live-news/venezuela-explosions-caracas-intl-hnk-01-03-26" },
+      { label: "MSNBC", url: "https://www.ms.now/news/trump-venezuela-maga-election-conspiracy-theory" },
+      { label: "Infowars", url: "https://www.infowars.com/posts/full-exclusive-interview-the-former-cia-insider-venezuelan-expert-who-accurately-predicted-the-trump-admins-capture-of-maduro-tells-alex-jones-whats-coming-next" },
+    ],
+  },
+  {
+    year: "2026",
+    date: "Jan 2026",
+    era: "author",
+    headline: "Returns to the United States",
+    body: "After months abroad, Byrne returns to the U.S. in the wake of the Maduro capture. Allied media figures report he was called to the White House on January 8.",
+    tags: ["politics"],
+    source: [
+      { label: "Media Matters", url: "https://www.mediamatters.org/voter-fraud-and-suppression/lindelltv-host-emerald-robinson-claims-patrick-byrne-got-called-white" },
+      { label: "Newsweek (Dubai context)", url: "https://www.newsweek.com/patrick-byrne-trump-ally-flees-us-venezuela-1966745" },
+    ],
   },
 ];
 

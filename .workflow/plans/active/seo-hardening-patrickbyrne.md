@@ -1,6 +1,6 @@
 ---
 plan: seo-hardening-patrickbyrne
-status: active
+status: completed
 priority: high
 current_time: 2
 confirmed_complete: true

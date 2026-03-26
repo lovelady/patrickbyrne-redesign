@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import Container from "../ui/Container";
-import Section from "../ui/Section";
 import Button from "../ui/Button";
 
 export default function PressInquiry() {
@@ -24,16 +23,16 @@ export default function PressInquiry() {
   }, []);
 
   return (
-    <Section>
-      <Container narrow>
+    <section className="py-20 lg:py-28 bg-background">
+      <Container>
         <div
           ref={ref}
-          className="opacity-0 translate-y-6 transition-all duration-[600ms] ease-out"
+          className="opacity-0 translate-y-6 transition-all duration-[600ms] ease-out max-w-xl"
         >
-          <h2 className="text-3xl lg:text-4xl font-heading font-bold text-foreground">
+          <h2 className="text-3xl lg:text-4xl font-heading font-semibold text-foreground">
             Press &amp; Other Inquiries
           </h2>
-          <p className="mt-4 text-lg text-muted leading-relaxed">
+          <p className="mt-4 text-base text-muted leading-relaxed">
             For interview requests and other press inquiries, please complete
             the form below.
           </p>
@@ -42,51 +41,51 @@ export default function PressInquiry() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-xs font-body font-semibold uppercase tracking-[0.15em] text-muted mb-2"
+                className="block text-[0.6875rem] font-body font-medium uppercase tracking-[0.15em] text-muted mb-2"
               >
                 Name
               </label>
               <input
                 id="name"
                 type="text"
-                className="w-full max-w-md bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                className="w-full max-w-sm bg-surface border border-border rounded-md px-4 py-3 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-transparent transition-all duration-300"
                 placeholder="Your name"
               />
             </div>
             <div>
               <label
                 htmlFor="email"
-                className="block text-xs font-body font-semibold uppercase tracking-[0.15em] text-muted mb-2"
+                className="block text-[0.6875rem] font-body font-medium uppercase tracking-[0.15em] text-muted mb-2"
               >
                 Email
               </label>
               <input
                 id="email"
                 type="email"
-                className="w-full max-w-md bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+                className="w-full max-w-sm bg-surface border border-border rounded-md px-4 py-3 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-transparent transition-all duration-300"
                 placeholder="your@email.com"
               />
             </div>
             <div>
               <label
                 htmlFor="message"
-                className="block text-xs font-body font-semibold uppercase tracking-[0.15em] text-muted mb-2"
+                className="block text-[0.6875rem] font-body font-medium uppercase tracking-[0.15em] text-muted mb-2"
               >
                 Message
               </label>
               <textarea
                 id="message"
                 rows={5}
-                className="w-full max-w-lg bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 resize-none"
+                className="w-full max-w-md bg-surface border border-border rounded-md px-4 py-3 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-transparent transition-all duration-300 resize-none"
                 placeholder="Your message..."
               />
             </div>
-            <Button type="submit" variant="primary">
-              Submit Now
+            <Button type="submit" variant="secondary">
+              Submit Inquiry
             </Button>
           </form>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

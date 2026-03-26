@@ -39,17 +39,17 @@ type ButtonProps = ButtonAsButton | ButtonAsLink | ButtonAsAnchor;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent text-background font-semibold hover:bg-accent/90 active:bg-accent/80",
+    "bg-accent/90 text-background font-medium hover:bg-accent active:bg-accent/80",
   secondary:
-    "border border-border text-foreground font-medium hover:border-foreground/30 hover:text-foreground active:bg-surface",
+    "border border-border text-foreground/80 font-medium hover:border-muted/40 hover:text-foreground active:bg-surface",
   outline:
-    "border border-accent/40 text-accent font-medium hover:border-accent hover:bg-accent/5",
+    "border border-accent/30 text-accent font-medium hover:border-accent/60 hover:bg-accent/5",
   quiet:
     "text-muted font-medium hover:text-foreground",
 };
 
 const baseStyles =
-  "inline-flex items-center justify-center px-8 py-3 text-sm uppercase tracking-[0.15em] rounded transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "inline-flex items-center justify-center px-7 py-3.5 text-[0.6875rem] uppercase tracking-[0.18em] rounded-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export default function Button(props: ButtonProps) {
   const { variant = "primary", className = "", children } = props;
