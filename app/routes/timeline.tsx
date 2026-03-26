@@ -1,24 +1,16 @@
-import type { MetaFunction } from "react-router";
 import { events } from "../data/timeline";
 import TimelineHero from "../components/timeline/TimelineHero";
 import TimelineLayout from "../components/timeline/TimelineLayout";
+import { buildMeta } from "../lib/seo";
 
-export const meta: MetaFunction = () => [
-  { title: "Timeline — Patrick M. Byrne" },
-  {
-    name: "description",
-    content:
+export function meta() {
+  return buildMeta({
+    title: "Timeline — Patrick M. Byrne",
+    description:
       "A chronological look at the life and career of Patrick M. Byrne — entrepreneur, philosopher, and advocate.",
-  },
-  { property: "og:title", content: "Timeline — Patrick M. Byrne" },
-  {
-    property: "og:description",
-    content:
-      "A chronological look at the life and career of Patrick M. Byrne — entrepreneur, philosopher, and advocate.",
-  },
-  { property: "og:type", content: "website" },
-  { name: "robots", content: "index, follow" },
-];
+    path: "/timeline",
+  });
+}
 
 export default function TimelinePage() {
   return (
