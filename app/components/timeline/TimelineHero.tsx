@@ -32,11 +32,12 @@ export default function TimelineHero() {
             A Life in Full
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-semibold text-foreground leading-[0.92] tracking-tight">
-            Timeline
+            Life &amp; Career
           </h1>
           <p className="mt-8 text-xl text-muted leading-relaxed font-body max-w-2xl">
-            From Fort Wayne to Dubai — the key moments that shaped a life in
-            business, technology, scholarship, and public advocacy.
+            Entrepreneur, scholar, and advocate. From Fort Wayne to Dubai — the
+            story of a life in business, technology, scholarship, and public
+            advocacy.
           </p>
           <div className="mt-6 w-16 h-px bg-accent/30" />
         </div>

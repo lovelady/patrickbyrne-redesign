@@ -1,5 +1,7 @@
-import AboutHero from "../components/about/AboutHero";
-import AboutContent from "../components/about/AboutContent";
+import { events } from "../data/timeline";
+import TimelineHero from "../components/timeline/TimelineHero";
+import TimelineBio from "../components/timeline/TimelineBio";
+import TimelineLayout from "../components/timeline/TimelineLayout";
 import { buildMeta } from "../lib/seo";
 
 export function meta() {
@@ -15,8 +17,9 @@ export function meta() {
 export default function About() {
   return (
     <>
-      <AboutHero />
-      <AboutContent />
+      <TimelineHero />
+      <TimelineBio />
+      <TimelineLayout events={events} />
     </>
   );
 }
