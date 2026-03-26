@@ -54,7 +54,7 @@ export default function HeroSection() {
             Byrne
           </h1>
           <p className="mt-8 text-lg lg:text-xl text-muted leading-relaxed font-body max-w-lg">
-            Founder &amp; former CEO of Overstock.com. Entrepreneur, Stanford
+            Founder &amp; former CEO of Overstock.com. Entrepreneur,
             scholar, and advocate for constitutional republicanism, election
             integrity, and school choice.
           </p>
