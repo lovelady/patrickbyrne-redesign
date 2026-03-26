@@ -53,6 +53,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
@@ -65,13 +77,13 @@ export default function Header() {
         {/* Logo */}
         <Link
           to="/"
-          className="relative z-10 text-[1.5rem] font-body font-semibold tracking-[0.08em] text-foreground/92 hover:text-foreground transition-colors duration-300 uppercase"
+          className="relative z-[60] text-[1.5rem] font-body font-semibold tracking-[0.08em] text-foreground/92 hover:text-foreground transition-colors duration-300 uppercase"
         >
           Patrick M. Byrne
         </Link>
 
         {/* Desktop Nav — uppercase tracked sans */}
-        <div className="hidden md:flex items-center gap-12">
+        <div className="hidden lg:flex items-center gap-12">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             return (
@@ -109,7 +121,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="relative z-10 md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
+          className="relative z-[60] lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           <span
@@ -133,7 +145,8 @@ export default function Header() {
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
       <div
-        className="md:hidden fixed inset-0 z-40 bg-background/98 backdrop-blur-lg animate-fade-in"
+        className="lg:hidden fixed inset-0 z-50 bg-background animate-fade-in overflow-hidden touch-action-none"
+        onTouchMove={(e) => e.preventDefault()}
       >
         <div className="flex flex-col items-start justify-center h-full px-10 gap-8">
           {navLinks.map((link, i) => {
