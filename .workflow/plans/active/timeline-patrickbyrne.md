@@ -2,14 +2,14 @@
 plan: timeline-patrickbyrne
 status: active
 priority: medium
-current_time: 1
-confirmed_complete: false
+current_time: 3
+confirmed_complete: true
 project_id: project.default
 total_slots: 3
 time_slots:
-  1: { status: in_progress, date: null }
-  2: { status: pending, date: null }
-  3: { status: pending, date: null }
+  1: { status: completed, date: 2026-03-25 }
+  2: { status: completed, date: 2026-03-25 }
+  3: { status: completed, date: 2026-03-25 }
 prs: []
 pr_strategy: manual
 ---
@@ -59,9 +59,9 @@ A standalone `/timeline` route showcasing Patrick Byrne's chronological life sto
 | 3 | Update `.workflow/redesign/route-map.md` to include the new `/timeline` route. | `.workflow/redesign/route-map.md` | `.workflow/redesign/` |
 
 **Exit Criteria:**
-- [ ] `app/data/timeline.ts` exists with all events typed and populated
-- [ ] `/timeline` route renders (even if unstyled) without errors
-- [ ] Route map updated
+- [x] `app/data/timeline.ts` exists with all events typed and populated
+- [x] `/timeline` route renders (even if unstyled) without errors
+- [x] Route map updated
 
 ---
 
@@ -78,12 +78,12 @@ A standalone `/timeline` route showcasing Patrick Byrne's chronological life sto
 | 5 | Wire all components into `app/routes/timeline.tsx`. Render: `TimelineHero` → `TimelineLayout` (with all era groups and events). Verify scroll animations work and design tokens are consistent. | `app/routes/timeline.tsx` (updated) | `app/routes/` |
 
 **Exit Criteria:**
-- [ ] All timeline components built and wired into the route
-- [ ] Scroll animations work (fade-in-up per event)
-- [ ] Era groupings render with editorial headings
-- [ ] No hardcoded colors — all design tokens
-- [ ] Responsive at 390px, 768px, 1440px
-- [ ] `pnpm build` passes
+- [x] All timeline components built and wired into the route
+- [x] Scroll animations work (fade-in-up per event)
+- [x] Era groupings render with editorial headings
+- [x] No hardcoded colors — all design tokens
+- [x] Responsive at 390px, 768px, 1440px
+- [x] `pnpm build` passes
 
 ---
 
@@ -99,12 +99,12 @@ A standalone `/timeline` route showcasing Patrick Byrne's chronological life sto
 | 4 | Final visual review: start `pnpm dev`, walk each era group, verify animations, spacing, and typography feel premium and editorial. Document any issues. Fix before marking complete. | Validation report | `app/` |
 
 **Exit Criteria:**
-- [ ] SEO meta complete
-- [ ] Accessibility passes (semantic HTML, focus rings, contrast)
-- [ ] Timeline linked in Header nav
-- [ ] Final visual review passed
-- [ ] `pnpm build` passes with no errors
-- [ ] Ready for Patrick's review
+- [x] SEO meta complete
+- [x] Accessibility passes (semantic HTML, focus rings, contrast)
+- [x] Timeline linked in Header nav
+- [x] Final visual review passed
+- [x] `pnpm build` passes with no errors
+- [x] Ready for Patrick's review
 
 ---
 
