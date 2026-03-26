@@ -7,7 +7,7 @@ confirmed_complete: false
 project_id: project.default
 total_slots: 3
 time_slots:
-  1: { status: pending, date: null }
+  1: { status: in_progress, date: null }
   2: { status: pending, date: null }
   3: { status: pending, date: null }
 prs: []

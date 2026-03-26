@@ -5,6 +5,9 @@ routes:
   - path: /about
     file: app/routes/about.tsx
     title: "Bio – Official Patrick M. Byrne Website"
+  - path: /timeline
+    file: app/routes/timeline.tsx
+    title: "Timeline — Patrick M. Byrne"
   - path: /contact
     file: app/routes/contact.tsx
     title: "Contact – Official Patrick M. Byrne Website"
